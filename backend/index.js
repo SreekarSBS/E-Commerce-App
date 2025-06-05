@@ -16,10 +16,7 @@ app.use(express.json()); // converts to json and sends to backend
 app.use(cors()); // connect to express app on port 4k
 app.use(express.urlencoded({ extended: true }));
 //Databse Connection With MongoDB
-mongoose.connect(process.env.MONGO_URL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
