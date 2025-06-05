@@ -8,12 +8,16 @@ const path = require("path");
 const cors = require("cors");
 const { type } = require("os");
 const { error, log } = require("console");
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(express.json()); // converts to json and sends to backend
 app.use(cors()); // connect to express app on port 4k
 app.use(express.urlencoded({ extended: true }));
 //Databse Connection With MongoDB
-mongoose.connect("mongodb_atlas_db_uri_with_credentials");
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 //API Creation
 
