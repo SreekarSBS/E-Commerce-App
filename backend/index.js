@@ -13,7 +13,7 @@ app.use(express.json()); // converts to json and sends to backend
 app.use(cors()); // connect to express app on port 4k
 app.use(express.urlencoded({ extended: true }));
 //Databse Connection With MongoDB
-mongoose.connect("mongodb+srv://username:password@cluster0.0ogxp.mongodb.net/e-commerce");
+mongoose.connect("mongodb_atlas_db_uri_with_credentials");
 
 //API Creation
 
