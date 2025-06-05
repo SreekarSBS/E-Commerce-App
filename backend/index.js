@@ -15,7 +15,10 @@ app.use(express.json()); // converts to json and sends to backend
 app.use(cors()); // connect to express app on port 4k
 app.use(express.urlencoded({ extended: true }));
 //Databse Connection With MongoDB
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
@@ -265,6 +268,16 @@ app.post('/getcart',fetchUser,async(req,res)=>{
     let userData  = await Users.findOne({_id:req.user.id});
     res.json(userData.cartData)
 })
+
+const path = require("path");
+
+// Serve the React frontend
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+});
+
 
 app.listen(port,(error)=>{
     if(!error){
