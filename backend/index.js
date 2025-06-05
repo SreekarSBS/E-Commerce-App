@@ -269,7 +269,7 @@ app.post('/getcart',fetchUser,async(req,res)=>{
     res.json(userData.cartData)
 })
 
-const path = require("path");
+
 
 // Serve the React frontend
 app.use(express.static(path.join(__dirname, "../frontend/build")));
