@@ -7,8 +7,9 @@ ShopSphere is a full-stack eCommerce web application developed using the MERN st
 ## 🌐 Live Demo
 
 🔗 [ShopSphere Live](https://shopsphere-demo.vercel.app)
+  - ![image](https://github.com/user-attachments/assets/c5880edf-d09e-4855-ab2d-b0597416165e)
   - ![image](https://github.com/user-attachments/assets/65c43366-8728-419d-b923-ac4d022c130d)
-  ![image](https://github.com/user-attachments/assets/79d0b656-8bf2-4580-8e70-96a8a66afae9)
+  - ![image](https://github.com/user-attachments/assets/79d0b656-8bf2-4580-8e70-96a8a66afae9)
 ---
 
 ## 📌 Features
