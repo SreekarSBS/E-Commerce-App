@@ -15,6 +15,12 @@ dotenv.config();
 app.use(express.json()); // converts to json and sends to backend
 app.use(cors()); // connect to express app on port 4k
 app.use(express.urlencoded({ extended: true }));
+
+
+
+
+
+
 //Databse Connection With MongoDB
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Connected to MongoDB"))
@@ -274,10 +280,8 @@ app.post('/getcart',fetchUser,async(req,res)=>{
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
-});
-
-
+    res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+  });
 app.listen(port,(error)=>{
     if(!error){
         console.log("Server running on port "+port)
