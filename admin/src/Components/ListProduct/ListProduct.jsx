@@ -5,7 +5,7 @@ const ListProduct = () => {
     const [allproducts,setAllProducts]= useState([]);
 
     const fetchInfo = async()=>{
-        await fetch('http://localhost:4000/allproducts')
+        await fetch('https://shopsphere-87rp.onrender.com/allproducts')
          .then((res)=>res.json()).
          then((data)=>{setAllProducts(data)});
     }
@@ -14,7 +14,7 @@ const ListProduct = () => {
     },[]);
 
     const remove_product = async(id)=>{
-        await fetch('http://localhost:4000/removeproduct',{
+        await fetch('https://shopsphere-87rp.onrender.com/removeproduct',{
             method : 'POST',
             headers : {
                 Accept : 'application/json',
